@@ -23,7 +23,7 @@
 		$window.on('load', function() {
 			var cT = new Date();
 			var Hours = cT.getHours();
-			var textToSet = "Welcome to my profolio.";
+			var textToSet = "Welcome to my project profolio.";
 			if(Hours < 3 || Hours > 20){
 				// No change, no good way how to say "Good night?"
 			}else if(Hours < 11){
