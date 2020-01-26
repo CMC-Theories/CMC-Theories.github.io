@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Pydoku</title>
+		<title>Stylistic Agents</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -34,36 +34,42 @@
 						<li><a href="about.html">About Me</a></li>
 					</ul>
 				</nav>
-
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Pydoku</h1>
+							<h1>Stylistic Agents</h1>
 							<p>
-								This was a programming challenge to build a program in python or a similar programming language in under 24 hours. </p>
-								<p>My time: <b>21 hours, 14 minutes!</b></p>
-								<p>Okay, I decided to get some sleep during this so in reality, it is more like only <b><i>11 hours.</i></b><br/>
-								This included everything from learning how to actually use the python package, to implementing a game with it!</p>
+								This was an exploritory project where I taught myself about how to use computation shaders and what they are good for.
+								I wanted to explore how to use computational shaders, but I also wanted to explore creating simple agents, so I implemented 
+								"birds" (represented as wisps on screen). 
+								<p>
+									Each of these "birds" will simply
+									<ol>
+										<li>Go straight if nothing is in their way.</li>
+										<li>Dodge if something is in their way.</li>
+										<li>Fly away for birds that are way too close.</li>
+										<li>Fly in the same direction as nearby birds.</li>
+										<li>Fly towards the center of the their flock.</li>
+									</ol>
+								</p>
 
 								<p>
 									So what did I implement?<br/>
 									<ul>
-										<li>Semi-arbitrary board size (1^2x1^2 -> 5^2x5^2)</li>
-										<li>Live feedback for violations</li>
-										<li>An automated solver using backtracking</li>
-										<li>Undo and Redo capabilities</li>
+										<li>Graphically, some glowing wisps that fly around, dodge walls.</li>
+										<li>Agents will generate tones that are mixed at the scripting level based on their locations in space.</li>
+										<li>Heading behavior calculated with computation shaders.</li>
+										<li>Stress test to see if computation shader perform better or worse than just the CPU in this project.</li>
 									</ul>
 								</p>
-
-								<b><a href="https://github.com/CMC-Theories/Pydoku">Check out the source code!</a></b>
-								<br/><br/><br/>
-								<p>Below are some images of the project in action!</p>
 								
-								
-								<span class="image"><h2>Sparse 25x25</h2><img src="images/pydoku_big.png" alt="" style="width: 75%; height: auto; "/></span>
+								For the last point, I did notice about a factor of 3x speed up when using the computation shaders, however it was running at about <b>2 seconds per frame</b>. This was with about 2,000 agents, which means about 2 million comparisons are done per frame.
+								For the music generation, it isn't terrible with only 3 agents in the world scene, but more than that becomes a cacophony.
 								<br/><br/>
-								
-								<span class="image"><h2>Successfully solved 9x9</h2><img src="images/pydoku_solved.png" alt="" /></span>
+								<b><a href="https://github.com/CMC-Theories/StylisticAgents">Check out the source code!</a></b>
+								<br/><br/><br/>
+								<p>Below is a video of the end result (without audio, as it would be painfully loud).</p>
+								<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8zw-7NYjyyI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						</div>
 					</div>
 
